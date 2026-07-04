@@ -747,16 +747,23 @@ CREATE TABLE FIDE_DETALLE_FACTURA_TB (
     CONSTRAINT FIDE_DETALLE_FACTURA_TB_ID_ESTADO_FK FOREIGN KEY (ID_ESTADO) REFERENCES FIDE_ESTADO_TB(ID_ESTADO)
 );
 /
+
+
+
+
+
 -- AUTORES: Integrates del grupo #4
 -- FECHA: 03/07/2026
 -- Descripción:Índice sobre la llave foránea de factura
 CREATE INDEX FIDE_DETALLE_FACTURA_TB_ID_FACTURA_IDX ON FIDE_DETALLE_FACTURA_TB(ID_FACTURA);
 /
--- AUTORES: Integrates del grupo #4
+
+: Integrates del grupo #4
 -- FECHA: 03/07/2026
 -- Descripción: Índice sobre la llave foránea de estado
 CREATE INDEX FIDE_DETALLE_FACTURA_TB_ID_ESTADO_IDX ON FIDE_DETALLE_FACTURA_TB(ID_ESTADO);
 /
+
 
 -- AUTORES: Integrates del grupo #4
 -- FECHA: 03/07/2026
@@ -774,11 +781,17 @@ CREATE TABLE FIDE_PAGO_TB (
     CONSTRAINT FIDE_PAGO_TB_ID_ESTADO_FK FOREIGN KEY (ID_ESTADO) REFERENCES FIDE_ESTADO_TB(ID_ESTADO)
 );
 /
+
+
+
 -- AUTORES: Integrates del grupo #4
 -- FECHA: 03/07/2026
 -- Descripción: Índice sobre la llave foránea de factura
 CREATE INDEX FIDE_PAGO_TB_ID_FACTURA_IDX ON FIDE_PAGO_TB(ID_FACTURA);
 /
+
+
+
 -- AUTORES: Integrates del grupo #4
 -- FECHA: 03/07/2026
 -- Descripción: Índice sobre la llave foránea de método de pago
@@ -808,6 +821,10 @@ CREATE TABLE FIDE_INVENTARIO_TB (
     CONSTRAINT FIDE_INVENTARIO_TB_ID_ESTADO_FK FOREIGN KEY (ID_ESTADO) REFERENCES FIDE_ESTADO_TB(ID_ESTADO)
 );
 /
+
+
+
+
 -- AUTORES: Integrates del grupo #4
 -- FECHA: 03/07/2026
 -- Descripción:
@@ -826,6 +843,13 @@ CREATE INDEX FIDE_INVENTARIO_TB_ID_ESTADO_IDX ON FIDE_INVENTARIO_TB(ID_ESTADO);
 CREATE INDEX FIDE_INVENTARIO_TB_NOMBRE_IDX ON FIDE_INVENTARIO_TB(NOMBRE);
 /
 
+
+
+
+
+
+
+
 -- AUTORES: Integrates del grupo #4
 -- FECHA: 03/07/2026
 -- Descripción:
@@ -839,6 +863,9 @@ CREATE TABLE FIDE_ALMACEN_INVENTARIO_TB (
     CONSTRAINT FIDE_ALMACEN_INVENTARIO_TB_ID_ESTADO_FK FOREIGN KEY (ID_ESTADO) REFERENCES FIDE_ESTADO_TB(ID_ESTADO)
 );
 /
+
+
+
 -- AUTORES: Integrates del grupo #4
 -- FECHA: 03/07/2026
 -- Descripción:
@@ -868,6 +895,9 @@ CREATE TABLE FIDE_PROVEEDOR_INVENTARIO_TB (
     CONSTRAINT FIDE_PROVEEDOR_INVENTARIO_TB_ID_INVENTARIO_FK FOREIGN KEY (ID_INVENTARIO) REFERENCES FIDE_INVENTARIO_TB(ID_INVENTARIO)
 );
 /
+  
+  
+
   
 -- AUTORES: Integrates del grupo #4
 -- FECHA: 03/07/2026
@@ -919,6 +949,10 @@ CREATE INDEX FIDE_FACTURA_PROVEEDOR_TB_NUMERO_IDX ON FIDE_FACTURA_PROVEEDOR_TB(N
 -- Descripción: Índice para reportes por fecha de emisión
 CREATE INDEX FIDE_FACTURA_PROVEEDOR_TB_FECHA_IDX ON FIDE_FACTURA_PROVEEDOR_TB(FECHA_FACTURA);
 /
+
+
+
+
 -- AUTORES: Integrates del grupo #4
 -- FECHA: 03/07/2026
 -- Descripción:Índice para control de facturas por vencer
@@ -948,11 +982,19 @@ CREATE TABLE FIDE_DETALLE_FACTURA_PROVEEDOR_TB (
 -- Descripción: Índice sobre la llave foránea de factura proveedor
 CREATE INDEX FIDE_DETALLE_FACTURA_PROVEEDOR_TB_ID_FACTURA_PROVEEDOR_IDX ON FIDE_DETALLE_FACTURA_PROVEEDOR_TB(ID_FACTURA_PROVEEDOR);
 /
+
+
+
+
+
+
 -- AUTORES: Integrates del grupo #4
 -- FECHA: 03/07/2026
 -- Descripción: Índice sobre la llave foránea de inventario
 CREATE INDEX FIDE_DETALLE_FACTURA_PROVEEDOR_TB_ID_INVENTARIO_IDX ON FIDE_DETALLE_FACTURA_PROVEEDOR_TB(ID_INVENTARIO);
 /
+
+
 -- AUTORES: Integrates del grupo #4
 -- FECHA: 03/07/2026
 -- Descripción: Índice sobre la llave foránea de estado
@@ -989,17 +1031,29 @@ CREATE INDEX FIDE_AVERIA_TB_ID_ABONADO_IDX ON FIDE_AVERIA_TB(ID_ABONADO);
 -- Descripción:
 CREATE INDEX FIDE_AVERIA_TB_ID_SECTOR_IDX ON FIDE_AVERIA_TB(ID_SECTOR);
 /
---Índice sobre la llave foránea de tipo de avería
+
+-- AUTORES: Integrates del grupo #4
+-- FECHA: 03/07/2026
+-- Descripción: Índice sobre la llave foránea de tipo de avería
 CREATE INDEX FIDE_AVERIA_TB_ID_TIPO_AVERIA_IDX ON FIDE_AVERIA_TB(ID_TIPO_AVERIA);
 /
---Índice sobre la llave foránea de estado
+
+-- AUTORES: Integrates del grupo #4
+-- FECHA: 03/07/2026
+-- Descripción: Índice sobre la llave foránea de estado
 CREATE INDEX FIDE_AVERIA_TB_ID_ESTADO_IDX ON FIDE_AVERIA_TB(ID_ESTADO);
 /
---Índice para reportes de averías por fecha de reporte
+
+-- AUTORES: Integrates del grupo #4
+-- FECHA: 03/07/2026
+-- Descripción: Índice para reportes de averías por fecha de reporte
 CREATE INDEX FIDE_AVERIA_TB_FECHA_IDX ON FIDE_AVERIA_TB(FECHA_REPORTE);
 /
 
---Tabla de órdenes de trabajo generadas para atender averías
+
+-- AUTORES: Integrates del grupo #4
+-- FECHA: 03/07/2026
+-- Descripción: Tabla de órdenes de trabajo generadas para atender averías
 CREATE TABLE FIDE_ORDEN_TRABAJO_TB (
     ID_ORDEN_TRABAJO NUMBER PRIMARY KEY,
     FECHA_ASIGNACION DATE,
@@ -1014,23 +1068,39 @@ CREATE TABLE FIDE_ORDEN_TRABAJO_TB (
     CONSTRAINT FIDE_ORDEN_TRABAJO_TB_ID_ESTADO_FK FOREIGN KEY (ID_ESTADO) REFERENCES FIDE_ESTADO_TB(ID_ESTADO)
 );
 /
---Índice sobre la llave foránea de avería
+
+-- AUTORES: Integrates del grupo #4
+-- FECHA: 03/07/2026
+-- Descripción: Índice sobre la llave foránea de avería
 CREATE INDEX FIDE_ORDEN_TRABAJO_TB_ID_AVERIA_IDX ON FIDE_ORDEN_TRABAJO_TB(ID_AVERIA);
 /
---Índice sobre la llave foránea de tipo de orden
+
+-- AUTORES: Integrates del grupo #4
+-- FECHA: 03/07/2026
+-- Descripción: Índice sobre la llave foránea de tipo de orden
 CREATE INDEX FIDE_ORDEN_TRABAJO_TB_ID_TIPO_ORDEN_TRABAJO_IDX ON FIDE_ORDEN_TRABAJO_TB(ID_TIPO_ORDEN_TRABAJO);
 /
---Índice sobre la llave foránea de estado
+-- AUTORES: Integrates del grupo #4
+-- FECHA: 03/07/2026
+-- Descripción: Índice sobre la llave foránea de estado
 CREATE INDEX FIDE_ORDEN_TRABAJO_TB_ID_ESTADO_IDX ON FIDE_ORDEN_TRABAJO_TB(ID_ESTADO);
 /
---Índice para consultas de órdenes por fecha de asignación
+-- AUTORES: Integrates del grupo #4
+-- FECHA: 03/07/2026
+-- Descripción: Índice para consultas de órdenes por fecha de asignación
 CREATE INDEX FIDE_ORDEN_TRABAJO_TB_FECHA_ASIGNACION_IDX ON FIDE_ORDEN_TRABAJO_TB(FECHA_ASIGNACION);
 /
---Índice para consultas de órdenes por fecha de cierre
+
+
+
+-- AUTORES: Integrates del grupo #4
+-- FECHA: 03/07/2026
+-- Descripción: Índice para consultas de órdenes por fecha de cierre
 CREATE INDEX FIDE_ORDEN_TRABAJO_TB_FECHA_CIERRE_IDX ON FIDE_ORDEN_TRABAJO_TB(FECHA_CIERRE);
 /
-
---Tabla puente entre órdenes de trabajo y empleados asignados
+-- AUTORES: Integrates del grupo #4
+-- FECHA: 03/07/2026
+-- Descripción: Tabla intermedia entre órdenes de trabajo y empleados asignados
 CREATE TABLE FIDE_ORDEN_EMPLEADO_TB (
     ID_ORDEN_TRABAJO NUMBER  NOT NULL,
     ID_EMPLEADO NUMBER  NOT NULL,
@@ -1066,6 +1136,7 @@ CREATE TABLE FIDE_ORDEN_INVENTARIO_TB (
 -- Descripción: Índice sobre la llave foránea de inventario
 CREATE INDEX FIDE_ORDEN_INVENTARIO_TB_ID_INVENTARIO_IDX ON FIDE_ORDEN_INVENTARIO_TB(ID_INVENTARIO);
 /
+
 -- AUTORES: Integrates del grupo #4
 -- FECHA: 03/07/2026
 -- Descripción: Índice sobre la llave foránea de orden de trabajo
@@ -1104,16 +1175,25 @@ CREATE INDEX FIDE_MOVIMIENTO_INVENTARIO_TB_ID_ORDEN_TRABAJO_IDX ON FIDE_MOVIMIEN
 -- Descripción:  Índice sobre la llave foránea de estado
 CREATE INDEX FIDE_MOVIMIENTO_INVENTARIO_TB_ID_ESTADO_IDX ON FIDE_MOVIMIENTO_INVENTARIO_TB(ID_ESTADO);
 /
+
+
 -- AUTORES: Integrates del grupo #4
 -- FECHA: 03/07/2026
 -- Descripción:  Índice para reportes de movimientos por fecha
 CREATE INDEX FIDE_MOVIMIENTO_INVENTARIO_TB_FECHA_IDX ON FIDE_MOVIMIENTO_INVENTARIO_TB(FECHA);
 /
+
+
 -- AUTORES: Integrates del grupo #4
 -- FECHA: 03/07/2026
 -- Descripción: Índice para filtrar por tipo de movimiento (entrada/salida)
 CREATE INDEX FIDE_MOVIMIENTO_INVENTARIO_TB_TIPO_IDX ON FIDE_MOVIMIENTO_INVENTARIO_TB(TIPO);
 /
+
+
+
+
+
 -- AUTORES: Integrates del grupo #4
 -- FECHA: 03/07/2026
 -- Descripción: Commit normal
