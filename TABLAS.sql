@@ -178,36 +178,38 @@ CREATE TABLE FIDE_PAIS_ABONADO_TB (
 -- FECHA: 03/07/2026
 -- Descripción: Tabla de provincias para abonados
 CREATE TABLE FIDE_PROVINCIA_ABONADO_TB (
-    ID_PROVINCIA    NUMBER          PRIMARY KEY,
-    NOMBRE          VARCHAR2(100)   NOT NULL
+    ID_PROVINCIA NUMBER PRIMARY KEY,
+    NOMBRE VARCHAR2(100) NOT NULL
 );
 /
-
---Tabla de cantones para abonados
+-- AUTORES: Integrates del grupo #4
+-- FECHA: 03/07/2026
+-- Descripción: Tabla de cantones para abonados
 CREATE TABLE FIDE_CANTON_ABONADO_TB (
-    ID_CANTON   NUMBER          PRIMARY KEY,
-    NOMBRE      VARCHAR2(100)   NOT NULL
+    ID_CANTON NUMBER PRIMARY KEY,
+    NOMBRE VARCHAR2(100)   NOT NULL
 );
 /
-
---Tabla de distritos para abonados
+-- AUTORES: Integrates del grupo #4
+-- FECHA: 03/07/2026
+-- Descripción: Tabla de distritos para abonados
 CREATE TABLE FIDE_DISTRITO_ABONADO_TB (
     ID_DISTRITO NUMBER PRIMARY KEY,
     NOMBRE VARCHAR2(100) NOT NULL
 );
 /
 
--- SECCION 4: UBICACIONES GEOGRAFICAS - EMPLEADO
--- Tablas de referencia geográfica para los empleados
-
---Tabla de países para empleados
+-- AUTORES: Integrates del grupo #4
+-- FECHA: 03/07/2026
+-- Descripción: Tabla de países para empleados
 CREATE TABLE FIDE_PAIS_EMPLEADO_TB (
     ID_PAIS NUMBER PRIMARY KEY,
     NOMBRE VARCHAR2(100) NOT NULL
 );
 /
-
---Tabla de provincias para empleados
+-- AUTORES: Integrates del grupo #4
+-- FECHA: 03/07/2026
+-- Descripción: Tabla de provincias para empleados
 CREATE TABLE FIDE_PROVINCIA_EMPLEADO_TB (
     ID_PROVINCIA NUMBER PRIMARY KEY,
     NOMBRE VARCHAR2(100) NOT NULL
