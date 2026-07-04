@@ -49,6 +49,11 @@ GRANT CREATE SESSION TO FIDE_ASADA_ADMIN;
 --Descripción: Asignar el rol al usuario
 GRANT FIDE_PROYECTO_ADMIN_ROL TO FIDE_ASADA_ADMIN;
 
+
+
+
+
+
 -- AUTORES: Integrates del grupo #4
 -- FECHA: 02/07/2026
 --Descripción:Rol para el personal administrativo
