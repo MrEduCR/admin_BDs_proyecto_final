@@ -10,6 +10,7 @@ CREATE PROFILE FIDE_PROYECTO_FINAL_PROF LIMIT
     PASSWORD_GRACE_TIME 7
     PASSWORD_VERIFY_FUNCTION ADMIN.VERIFICA_PASSWORD; --está función es la que hicimos en clase
 
+
 -- AUTORES: Integrates del grupo #4
 -- FECHA: 03/07/2026
 --Descripción: Crear un rol admin
@@ -18,10 +19,14 @@ CREATE ROLE FIDE_PROYECTO_ADMIN_ROL NOT IDENTIFIED;
 
 -- AUTORES: Integrates del grupo #4
 -- FECHA: 03/07/2026
--- Descripción: Dar privilegios al rol
+-- Descripción: Dar privilegios iniciales basicos al rol
 GRANT RESOURCE TO FIDE_PROYECTO_ADMIN_ROL;
+
+
+-- AUTORES: Integrates del grupo #4
+-- FECHA: 03/07/2026
+-- Descripción: Dar privilegios de inicio de sesion al rol
 GRANT CREATE SESSION TO FIDE_PROYECTO_ADMIN_ROL;
-GRANT CREATE TABLE TO FIDE_PROYECTO_ADMIN_ROL;
 
 
 -- AUTORES: Integrates del grupo #4
