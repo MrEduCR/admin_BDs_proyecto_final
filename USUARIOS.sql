@@ -39,6 +39,10 @@ CREATE USER FIDE_ASADA_ADMIN
     PROFILE FIDE_PROYECTO_FINAL_PROF
     QUOTA UNLIMITED ON DATA;
 
+-- AUTORES: Integrates del grupo #4
+-- FECHA: 03/07/2026
+-- Descripción: Dar privilegios de inicio de sesion al admin
+GRANT CREATE SESSION TO FIDE_ASADA_ADMIN;
 
 -- AUTORES: Integrates del grupo #4
 -- FECHA: 02/07/2026
