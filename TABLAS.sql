@@ -1,6 +1,3 @@
--- AUTORES: Integrates del grupo #4
--- FECHA: 03/07/2026
--- Descripción: Creacion del perfil
 
 -- AUTORES: Integrates del grupo #4
 -- FECHA: 03/07/2026
