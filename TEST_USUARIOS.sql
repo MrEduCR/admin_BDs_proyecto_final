@@ -7,8 +7,8 @@ SELECT * FROM FIDE_ASADA_ADMIN.FIDE_TARIFA_TB;
 
 -- AUTORES: Integrantes del grupo #4
 -- FECHA: 05/07/2026
---Descripción: Prueba que NO funciona, el cajero no tiene ningun privilegio sobre FIDE_ESTADO_TB
-SELECT * FROM FIDE_ASADA_ADMIN.FIDE_ESTADO_TB;
+--Descripción: Prueba que NO funciona, el cajero no tiene ningun privilegio sobre FIDE_ORDEN_EMPLEADO_TB directamente
+SELECT * FROM FIDE_ASADA_ADMIN.FIDE_ORDEN_EMPLEADO_TB;
 /
 
 
