@@ -1,4 +1,4 @@
-
+----------PRUEBAS CAJERO
 -- AUTORES: Integrantes del grupo #4
 -- FECHA: 05/07/2026
 --Descripción: Prueba que SI funciona, el cajero tiene SELECT otorgado sobre FIDE_TARIFA_TB
@@ -12,7 +12,9 @@ SELECT * FROM FIDE_ASADA_ADMIN.FIDE_ORDEN_EMPLEADO_TB;
 /
 
 
+--PRUEBAS AUDITOR
 
+  
 -- AUTORES: Integrantes del grupo #4
 -- FECHA: 05/07/2026
 --Descripción: Prueba que SI funciona, el auditor tiene SELECT ANY TABLE, puede leer FIDE_ESTADO_TB
@@ -27,7 +29,7 @@ VALUES (999, 'PRUEBA_AUDITORIA', 'PRUEBA');
 /
 
 
-
+--PRUEBAS OPERARIO
 
 -- AUTORES: Integrantes del grupo #4
 -- FECHA: 05/07/2026
