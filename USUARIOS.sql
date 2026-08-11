@@ -1,6 +1,47 @@
--- AUTORES: Integrates del grupo #4
--- FECHA: 03/07/2026
--- Descripción: Creacion del perfil
+-- Funcion verifica password
+CREATE OR REPLACE FUNCTION VERIFICA_PASSWORD (
+USERNAME VARCHAR2,
+PASSWORD VARCHAR2,
+OLD_PASSWORD VARCHAR2
+) RETURN BOOLEAN IS
+    BEGIN
+    IF LENGTH(PASSWORD) < 12 THEN
+    RAISE_APPLICATION_ERROR(-20001, 'Contrasenia debe tener mas de 12 caracteres');
+    END IF;
+    IF OLD_PASSWORD IS NOT NULL AND PASSWORD=OLD_PASSWORD THEN
+    RAISE_APPLICATION_ERROR(-20002, 'Constrasenia no puede ser igual a la anterior');
+    END IF;
+    IF NOT REGEXP_LIKE(PASSWORD, '[A-Z]') THEN 
+        RAISE_APPLICATION_ERROR(-20003, 'Constrasenia minimo con una mayuscula');
+    END IF;
+    IF NOT REGEXP_LIKE(PASSWORD, '[a-z]') THEN 
+        RAISE_APPLICATION_ERROR(-20004, 'Constrasenia minimo con una minuuscula'); 
+    END IF;
+    IF NOT REGEXP_LIKE(PASSWORD, '[0-9]') THEN 
+        RAISE_APPLICATION_ERROR(-20005, 'Constrasenia minimo con un numero'); 
+    END IF;
+    IF NOT REGEXP_LIKE(PASSWORD, '[^A-Za-z0-9]') THEN
+        RAISE_APPLICATION_ERROR(-20006, 'Constrasenia minimo con 1 caracter espepcial'); 
+    END IF;
+    IF REGEXP_LIKE(LOWER(PASSWORD), 'oracle|password|admin|fidelitas|abcdef' ) THEN 
+        RAISE_APPLICATION_ERROR(-20007, 'Constrasenia debil o tiene palabras restringidas'); 
+    END IF;
+    IF REGEXP_LIKE(PASSWORD, '\s') THEN
+        RAISE_APPLICATION_ERROR(-20008, 'La nueva contraseña no debe de contener espacios en ella.');
+    END IF;
+    IF REGEXP_LIKE(PASSWORD, '(.)\1') THEN
+            RAISE_APPLICATION_ERROR(-20009, 'La nueva contraseña no debe de contener caracteres iguales seguidos');
+        END IF;
+    IF INSTR(LOWER(PASSWORD), LOWER(USERNAME))>0 THEN
+        RAISE_APPLICATION_ERROR(-20010,'La nueva contraseña no debe de contener el nombre de Usuario.'); 
+    END IF;
+RETURN TRUE;
+END;
+/
+
+
+
+--Creacion del perfil
 CREATE PROFILE FIDE_PROYECTO_FINAL_PROF LIMIT
     SESSIONS_PER_USER 1
     FAILED_LOGIN_ATTEMPTS 3
